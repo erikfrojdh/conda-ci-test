@@ -1,0 +1,33 @@
+package:
+  name: conda-ci-test
+  version: 0.1.0
+
+source:
+  - path: ..
+
+# requirements:
+#   build: 
+#     - build
+
+#   run:
+#     - libstdcxx-ng
+#     - libgcc-ng 
+
+build:
+  number: 0
+  binary_relocation: True
+  rpaths:
+    - lib/
+
+outputs:
+  - name: noop
+    script: build_python_pkg.sh
+
+    requirements:
+      build:
+        - python
+        - setuptools
+        - build
+
+      run:
+        - python
