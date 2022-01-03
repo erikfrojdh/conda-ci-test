@@ -20,7 +20,7 @@ jobs:
         conda info
         conda list
     - name: Build conda pkg
-        shell: bash -l {0}
-        run: |
-            conda build .
+      shell: bash -l {0}
+      run: |
+          conda build .
 
