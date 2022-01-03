@@ -8,11 +8,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+    - name: Setup Miniconda
+      uses: conda-incubator/setup-miniconda@v2.1.1
       with:
-        python-version: 3.8
-    - name: Install dependencies
+        activate-environment: test
+        environment-file: conda-recepie/environment.yml
+        python-version: 3.9
+        auto-activate-base: false
+    - shell: bash -l {0}
       run: |
-        # $CONDA is an environment variable pointing to the root of the miniconda directory
-        $CONDA/bin/conda env update --file environment.yml --name base
+        conda info
+        conda list
