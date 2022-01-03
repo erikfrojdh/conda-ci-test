@@ -6,3 +6,4 @@ dependencies:
   - python
   - build
   - conda-build
+  - conda-verify

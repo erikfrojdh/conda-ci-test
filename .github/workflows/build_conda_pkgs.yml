@@ -23,4 +23,9 @@ jobs:
       shell: bash -l {0}
       run: |
           conda build .
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: conda-pkgs
+        path: /usr/share/miniconda/envs/test/conda-bld/linux-64/*.tar.bz2
 
